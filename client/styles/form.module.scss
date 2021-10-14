@@ -1,0 +1,113 @@
+@import "./variables";
+
+.signin,
+.signup,
+.ticket {
+  box-shadow: 0 0 2rem rgba($color-black, 0.3);
+  margin: 0 auto;
+  width: 40rem;
+  height: 50rem;
+  padding: 2rem;
+}
+.form {
+  &__heading {
+    text-align: center;
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+  &__group {
+    margin-bottom: 2rem;
+  }
+  &__input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    background-color: rgba($color-white, 0.5);
+    width: 100%;
+    border: none;
+    border: 1px solid rgba($color-black, 1);
+    border-radius: 2px;
+    display: block;
+    transition: all 0.3s;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      border-bottom: 3px solid $color-primary;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-dark;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark-2;
+    }
+  }
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-left: 2rem;
+    display: block;
+    transform: translateY(-7rem);
+    transition: all 0.3s;
+  }
+
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+
+  &__buttonGroup {
+    text-align: center;
+  }
+
+  &__button {
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 1.5rem 4rem;
+    border-radius: 3rem;
+    font-size: $default-font-size;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      border-radius: 3rem;
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+      &::after {
+        transform: scale(1.4, 1.6);
+        opacity: 0;
+      }
+    }
+
+    &Primary {
+      background-color: blue;
+      color: $color-white;
+
+      &::after {
+        background-color: blue;
+      }
+    }
+  }
+}
+
+.alertDanger {
+  font-size: 1.5rem;
+  color: red;
+  margin-bottom: 3rem;
+}
