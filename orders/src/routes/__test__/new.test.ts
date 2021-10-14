@@ -27,7 +27,7 @@ it("returns an error if the ticket is already reserved", async () => {
   const order = new Order({
     ticket,
     userId: "ladafadsgsfsa",
-    status: OrderStatus.Created,
+    status: OrderStatus.Complete,
     expiresAt: new Date(),
   });
   await order.save();
