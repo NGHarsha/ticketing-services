@@ -8,7 +8,7 @@ import { TicketUpdatedListener } from "./events/listeners/ticket-updated-listene
 import { natsWrapper } from "./nats-wrapper";
 
 const start = async () => {
-  console.log("Inside start");
+  console.log("Starting Orders service");
 
   //All the following if checks are to satisfy typescript while accessing env variables.
   //Typescript will not be sure if the env variables are defined, so it throws error.
